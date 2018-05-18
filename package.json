@@ -15,7 +15,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "lint:ci": "eslint src --max-warnings 0",
+    "fix": "eslint --fix src",
+    "q": "eslint --quiet --fix src/index.js $(git diff --cached --name-only --diff-filter=d HEAD | grep .js$)",
+    "size:why": "source-map-explorer build/static/js/main*.*js",
+    "size": "size-limit"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
